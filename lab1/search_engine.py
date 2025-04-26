@@ -59,7 +59,34 @@ class QueryProcessor:
 
 
 def extract_normalized_tokens(text: str) -> list[str]:
-    return text.split()
+    from nltk.corpus import stopwords
+    from nltk.tokenize import word_tokenize
+    import nltk
+
+    stops = stopwords.words("english")
+    puncts = ",.:!?-"
+    tok = word_tokenize(text)
+    tok = [w.lower() for w in tok if (w not in stops and w not in puncts)]
+    postok = nltk.pos_tag(tok)
+    tok = [get_lemma(e) for e in postok]
+    return tok
+
+
+from nltk.stem import WordNetLemmatizer
+
+wn = WordNetLemmatizer()
+
+
+def get_lemma(entry: tuple[str, str]) -> str:
+    pos = entry[1]
+    pos1 = None
+    if pos.startswith("J") or pos.startswith("R"):
+        pos1 = "a"
+    elif pos.startswith("N"):
+        pos1 = "n"
+    elif pos.startswith("V"):
+        pos1 = "v"
+    return wn.lemmatize(entry[0], pos1) if pos1 else entry[0]
 
 
 def initialize_data(documents: list[Document], questions: list[dict]) -> None:
@@ -82,7 +109,7 @@ def initialize_data(documents: list[Document], questions: list[dict]) -> None:
     question_lines = [
         "question;doc;method",
         "what are very old songs;1;keyword-search",
-        "what was the first vocal ever sung;1;synonyms",
+        "what was the oldest vocal ever sung;1;synonyms",
         "can animals make music;9;meronyms",
         "what was the first song;1;word-vector-search",
         "can music bring me back to an active life;8;passage-retrieval",
