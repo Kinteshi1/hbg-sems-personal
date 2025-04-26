@@ -1,3 +1,18 @@
+import sys
+import logging
+import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from gensim.models import KeyedVectors
+
+WN = WordNetLemmatizer()
+LOG = logging.getLogger(__name__)
+STOPWORDS = stopwords.words("english")
+PUNCTUATIONS = ",.:!?-"
+
+
 class Document:
 
     def __init__(self, id: int, title: str, text: str):
@@ -39,10 +54,9 @@ class DocumentIndex:
         return result
 
 
-from nltk.corpus import wordnet
-
-
 class QueryProcessor:
+    project_dir = "."
+    model = model = KeyedVectors.load(f"{project_dir}/model_cache/enwiki_20180420_100d.bin")
 
     def __init__(self, index: DocumentIndex):
         self.index = index
@@ -55,11 +69,33 @@ class QueryProcessor:
             for syn in synsets:
                 result.update([w.lower() for w in syn])
             result.add(token)
+        return list(result)
+
+    @staticmethod
+    def is_comparable(token: str) -> bool:
+        tags = nltk.pos_tag([token])
+        if tags:
+            tag = tags[0][1]
+            return tag.startswith("N") or tag.startswith("R") or tag.startswith("J")
+        return False
+
+    @staticmethod
+    def find_similar_tokens(query: list[str]) -> list[str]:
+        tokens = extract_relevant_tokens(query)
+        result = []
+        for t in (t for t in tokens if QueryProcessor.is_comparable(t)):
+            _s = QueryProcessor.model.most_similar(positive=t, topn=5)
+            simset = [s[0] for s in _s]
+            lemmas = lemmatize_tokens(simset)
+            result.extend(lemmas)
+        LOG.debug(f"similar tokens found: {result}")
         return result
 
     def query(self, query: str) -> list[QueryResult]:
         tokens = extract_normalized_tokens(query)
         tokens = QueryProcessor.expand_query_tokens(tokens)
+        tokens = set(tokens)
+        tokens.update(QueryProcessor.find_similar_tokens(query))
         result = []
         for token in tokens:
             docs = index.find_token(token)
@@ -73,22 +109,22 @@ class QueryProcessor:
 
 
 def extract_normalized_tokens(text: str) -> list[str]:
-    from nltk.corpus import stopwords
-    from nltk.tokenize import word_tokenize
-    import nltk
+    tokens = extract_relevant_tokens(text)
+    return lemmatize_tokens(tokens)
 
-    stops = stopwords.words("english")
-    # puncts = ",.:!?-"
+
+def extract_relevant_tokens(text: str) -> list[str]:
     tok = word_tokenize(text)
-    tok = [w.lower() for w in tok if (w not in stops and w.isalpha())]
-    postok = nltk.pos_tag(tok)
-    tok = [get_lemma(e) for e in postok]
-    return tok
+    return [w.lower() for w in tok if (w not in STOPWORDS and w not in PUNCTUATIONS)]
 
 
-from nltk.stem import WordNetLemmatizer
-
-wn = WordNetLemmatizer()
+def lemmatize_tokens(tokens: list[str]) -> list[str]:
+    postags = []
+    for token in tokens:
+        p = nltk.pos_tag([token])
+        postags.append(p[0])
+    result = [get_lemma(e) for e in postags]
+    return result
 
 
 def get_lemma(entry: tuple[str, str]) -> str:
@@ -100,7 +136,7 @@ def get_lemma(entry: tuple[str, str]) -> str:
         pos1 = "n"
     elif pos.startswith("V"):
         pos1 = "v"
-    return wn.lemmatize(entry[0], pos1) if pos1 else entry[0]
+    return WN.lemmatize(entry[0], pos1) if pos1 else entry[0]
 
 
 def initialize_data(documents: list[Document], questions: list[dict]) -> None:
@@ -125,7 +161,7 @@ def initialize_data(documents: list[Document], questions: list[dict]) -> None:
         "what are very old songs;1;keyword-search",
         "what was the oldest vocal ever sung;1;synonyms",
         "can animals make music;9;meronyms",
-        "what was the earliest song;1;word-vector-search",
+        "what is the earliest song;1;word-vector-search",
         "can music bring me back to an active life;8;passage-retrieval",
         "can a five years old make music;3;passage-retrieval",
         "is there music about animals;4;passage-retrieval",
@@ -134,6 +170,9 @@ def initialize_data(documents: list[Document], questions: list[dict]) -> None:
 
 
 if __name__ == "__main__":
+
+    logging.basicConfig(stream=sys.stdout)
+    LOG.setLevel(logging.DEBUG)
 
     documents = []
     queries = []
