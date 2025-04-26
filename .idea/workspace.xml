@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6509e02f-e7e6-4bcc-ac31-d47063ced221" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/search_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/search_engine.py" afterDir="false" />
-    </list>
+    <list default="true" id="6509e02f-e7e6-4bcc-ac31-d47063ced221" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +94,7 @@
       <workItem from="1745520998426" duration="1245000" />
       <workItem from="1745522255740" duration="3931000" />
       <workItem from="1745647351417" duration="3660000" />
-      <workItem from="1745652173222" duration="4369000" />
+      <workItem from="1745652173222" duration="4723000" />
     </task>
     <servers />
   </component>
@@ -107,6 +104,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hbg_sems_personal$test.coverage" NAME="test Coverage Results" MODIFIED="1745654051690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
     <SUITE FILE_PATH="coverage/hbg_sems_personal$setup.coverage" NAME="setup Coverage Results" MODIFIED="1745647641547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hbg_sems_personal$search_engine.coverage" NAME="search_engine Coverage Results" MODIFIED="1745656515543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
+    <SUITE FILE_PATH="coverage/hbg_sems_personal$search_engine.coverage" NAME="search_engine Coverage Results" MODIFIED="1745656854752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
   </component>
 </project>

@@ -66,7 +66,8 @@ def extract_normalized_tokens(text: str) -> list[str]:
     stops = stopwords.words("english")
     puncts = ",.:!?-"
     tok = word_tokenize(text)
-    tok = [w.lower() for w in tok if (w not in stops and w not in puncts)]
+    #tok = [w.lower() for w in tok if (w not in stops and w not in puncts)]
+    tok = [w.lower() for w in tok if (w not in stops and w.isalpha())]
     postok = nltk.pos_tag(tok)
     tok = [get_lemma(e) for e in postok]
     return tok
