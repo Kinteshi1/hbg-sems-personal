@@ -39,13 +39,27 @@ class DocumentIndex:
         return result
 
 
+from nltk.corpus import wordnet
+
+
 class QueryProcessor:
 
     def __init__(self, index: DocumentIndex):
         self.index = index
 
+    @staticmethod
+    def expand_query_tokens(q_tokens: list[str]) -> list[str]:
+        result = set()
+        for token in q_tokens:
+            synsets = wordnet.synonyms(token)
+            for syn in synsets:
+                result.update([w.lower() for w in syn])
+            result.add(token)
+        return result
+
     def query(self, query: str) -> list[QueryResult]:
         tokens = extract_normalized_tokens(query)
+        tokens = QueryProcessor.expand_query_tokens(tokens)
         result = []
         for token in tokens:
             docs = index.find_token(token)
@@ -64,9 +78,8 @@ def extract_normalized_tokens(text: str) -> list[str]:
     import nltk
 
     stops = stopwords.words("english")
-    puncts = ",.:!?-"
+    # puncts = ",.:!?-"
     tok = word_tokenize(text)
-    #tok = [w.lower() for w in tok if (w not in stops and w not in puncts)]
     tok = [w.lower() for w in tok if (w not in stops and w.isalpha())]
     postok = nltk.pos_tag(tok)
     tok = [get_lemma(e) for e in postok]
@@ -112,7 +125,7 @@ def initialize_data(documents: list[Document], questions: list[dict]) -> None:
         "what are very old songs;1;keyword-search",
         "what was the oldest vocal ever sung;1;synonyms",
         "can animals make music;9;meronyms",
-        "what was the first song;1;word-vector-search",
+        "what was the earliest song;1;word-vector-search",
         "can music bring me back to an active life;8;passage-retrieval",
         "can a five years old make music;3;passage-retrieval",
         "is there music about animals;4;passage-retrieval",
