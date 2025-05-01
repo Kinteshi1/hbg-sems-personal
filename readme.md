@@ -2,7 +2,7 @@
 Führen sie folgende Schritte durch
 - `conda create -n sems`
 - `conda activate sems`
-- `conda install flask, conda-forge::sentence-transformers=0.30.0, transformers, gensim, huggingface_hub`
+- `conda install flask, conda-forge::sentence-transformers, transformers, gensim, huggingface_hub`
 - `conda install conda-forge::python-annoy, nltk`
 - `python setup.py`
   

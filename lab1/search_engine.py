@@ -55,7 +55,7 @@ class DocumentIndex:
 
 
 class QueryProcessor:
-    project_dir = "."
+    project_dir = ".."
     model = model = KeyedVectors.load(f"{project_dir}/model_cache/enwiki_20180420_100d.bin")
 
     def __init__(self, index: DocumentIndex):
