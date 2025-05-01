@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6509e02f-e7e6-4bcc-ac31-d47063ced221" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lab1/results.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab1/synonym_search.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab1/word2vect_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/assignment.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/assignment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +151,7 @@
       <workItem from="1745767389776" duration="78000" />
       <workItem from="1746086490675" duration="727000" />
       <workItem from="1746087228744" duration="1819000" />
-      <workItem from="1746089058369" duration="5915000" />
+      <workItem from="1746089058369" duration="6549000" />
     </task>
     <servers />
   </component>
@@ -163,7 +159,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/hbg_sems_personal$synonym_search.coverage" NAME="synonym_search Coverage Results" MODIFIED="1746094609903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
+    <SUITE FILE_PATH="coverage/hbg_sems_personal$synonym_search.coverage" NAME="synonym_search Coverage Results" MODIFIED="1746095021233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
     <SUITE FILE_PATH="coverage/hbg_sems_personal$setup.coverage" NAME="setup Coverage Results" MODIFIED="1746089102153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hbg_sems_personal$assignment.coverage" NAME="assignment Coverage Results" MODIFIED="1746094434764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
     <SUITE FILE_PATH="coverage/hbg_sems_personal$word2vect_search.coverage" NAME="word2vect_search Coverage Results" MODIFIED="1746094950304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />

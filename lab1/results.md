@@ -1,7 +1,5 @@
-
-
-## Results for synonym search
-home/KInteshi/miniconda3/envs/hbg-sems-personal/bin/python /home/KInteshi/workspace/github.com/Kinteshi1/hbg-sems-personal/lab1/synonym_search.py 
+# Synonym Search Results with only Select Queries
+/home/KInteshi/miniconda3/envs/hbg-sems-personal/bin/python /home/KInteshi/workspace/github.com/Kinteshi1/hbg-sems-personal/lab1/synonym_search.py
 INFO:assignment:Building document index...
 INFO:assignment:Finished indexing 25 documents.
 
@@ -22,16 +20,18 @@ QUERY (Synonyms): 'What is the political system in Canada like?' (Expected Doc I
 	Rank 2: QueryResult(weight=1, docid=2, title='South Korea - Geography', hits='like')
 	-> CORRECT: Expected document found at Rank 1.
 
---- Synonym Search Metrics ---
+## Synonym Search Metrics 
 Total Queries: 3
+
 Correct @ Rank 1: 2
+
 Accuracy @ Rank 1: 66.67%
 
 --- Synonym Search Finished ---
 
 Process finished with exit code 0
 
-## Results for word2vect search
+# word2vect Search Results with only Select Queries
 INFO:assignment:Attempting to load Word2Vec model from: /home/KInteshi/workspace/github.com/Kinteshi1/hbg-sems-personal/lab1/../model_cache/enwiki_20180420_100d.bin
 INFO:gensim.utils:loading KeyedVectors object from /home/KInteshi/workspace/github.com/Kinteshi1/hbg-sems-personal/lab1/../model_cache/enwiki_20180420_100d.bin
 INFO:gensim.utils:KeyedVectors lifecycle event {'fname': '/home/KInteshi/workspace/github.com/Kinteshi1/hbg-sems-personal/lab1/../model_cache/enwiki_20180420_100d.bin', 'datetime': '2025-05-01T12:19:15.091607', 'gensim': '4.3.3', 'python': '3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:50:58) [GCC 12.3.0]', 'platform': 'Linux-6.14.4-300.fc42.x86_64-x86_64-with-glibc2.41', 'event': 'loaded'}
@@ -81,9 +81,11 @@ QUERY (Word2Vec): 'Describe Brazil's general weather conditions.' (Expected Doc 
 	Rank 2: QueryResult(weight=2, docid=22, title='Brazil - Geography', hits='brazil 's')
 	-> CORRECT: Expected document found at Rank 1.
 
---- Word2Vec Search Metrics ---
+## Word2Vec Search Metrics 
 Total Queries: 8
+
 Correct @ Rank 1: 3
+
 Accuracy @ Rank 1: 37.50%
 
 --- Word2Vec Search Finished ---
