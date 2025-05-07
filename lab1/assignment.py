@@ -44,10 +44,17 @@ class QueryResult:
         self.weight += 1
 
     def __repr__(self) -> str:
-        # Include title in representation
-        return (f"QueryResult(weight={self.weight}, docid={self.document.id}, "
-                f"title='{self.document.title}', hits='{self.hitlist}')")
+        # Include title and a snippet of the text in representation
+        text_snippet_length = 120 # Adjust as needed
+        doc_text = self.document.text.replace("\n", " ") # Replace newlines for cleaner one-line snippet
+        if len(doc_text) > text_snippet_length:
+            text_snippet = doc_text[:text_snippet_length] + "..."
+        else:
+            text_snippet = doc_text
 
+        return (f"QueryResult(weight={self.weight}, docid={self.document.id}, "
+                f"title='{self.document.title}', hits='{self.hitlist}', "
+                f"text='{text_snippet}')")
 
 # --- Indexing Class ---
 class DocumentIndex:
