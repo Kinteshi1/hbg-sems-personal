@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6509e02f-e7e6-4bcc-ac31-d47063ced221" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Textanalyse und semantische Suche.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +70,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/KInteshi/workspace/github.com/Kinteshi1/hbg-sems-personal/lab1",
+    "last_opened_file_path": "/home/KInteshi/workspace/github.com/Kinteshi1/hbg-sems-personal",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,8 +82,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lab1" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lab1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
@@ -151,7 +152,8 @@
       <workItem from="1745767389776" duration="78000" />
       <workItem from="1746086490675" duration="727000" />
       <workItem from="1746087228744" duration="1819000" />
-      <workItem from="1746089058369" duration="6549000" />
+      <workItem from="1746089058369" duration="7613000" />
+      <workItem from="1746624914063" duration="3982000" />
     </task>
     <servers />
   </component>
@@ -159,10 +161,10 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/hbg_sems_personal$synonym_search.coverage" NAME="synonym_search Coverage Results" MODIFIED="1746095021233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
-    <SUITE FILE_PATH="coverage/hbg_sems_personal$setup.coverage" NAME="setup Coverage Results" MODIFIED="1746089102153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/hbg_sems_personal$assignment.coverage" NAME="assignment Coverage Results" MODIFIED="1746094434764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
-    <SUITE FILE_PATH="coverage/hbg_sems_personal$word2vect_search.coverage" NAME="word2vect_search Coverage Results" MODIFIED="1746094950304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
+    <SUITE FILE_PATH="coverage/hbg_sems_personal$synonym_search.coverage" NAME="synonym_search Coverage Results" MODIFIED="1746630912966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
+    <SUITE FILE_PATH="coverage/hbg_sems_personal$setup.coverage" NAME="setup Coverage Results" MODIFIED="1746630572438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hbg_sems_personal$assignment.coverage" NAME="assignment Coverage Results" MODIFIED="1746630623590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
+    <SUITE FILE_PATH="coverage/hbg_sems_personal$word2vect_search.coverage" NAME="word2vect_search Coverage Results" MODIFIED="1746630933139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
     <SUITE FILE_PATH="coverage/hbg_sems_personal$test.coverage" NAME="test Coverage Results" MODIFIED="1746089162498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
     <SUITE FILE_PATH="coverage/hbg_sems_personal$search_engine.coverage" NAME="search_engine Coverage Results" MODIFIED="1746092787766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
   </component>
